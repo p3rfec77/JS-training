@@ -27,7 +27,11 @@ const modals = () => {
         };
 
         close.addEventListener('click', closeModal);
-        modal.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) {
+                closeModal();
+            }
+        });
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeModal();
@@ -46,7 +50,7 @@ const modals = () => {
     };
 
     bindModal(popup);
-    showModalByTime('.popup', 2);
+    showModalByTime('.popup', 10);
 };
 
 export default modals;
