@@ -50,7 +50,7 @@ const modals = () => {
     };
 
     bindModal(popup);
-    showModalByTime('.popup', 10);
+    // showModalByTime('.popup', 10);
 };
 
 export default modals;

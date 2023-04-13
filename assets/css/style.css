@@ -137,10 +137,10 @@ body {
     height: 300px;
 }
 
-.content__container {
+.tabs__content_container {
     display: none;
 }
 
-.content__container:first-of-type {
+.tabs__content_container:first-of-type {
     display: block;
 }
