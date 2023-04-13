@@ -8,7 +8,28 @@
     <title>JS practice</title>
 </head>
 <body>
-    
-    <script src="/assets/JS/main.js"></script>
+    <header class="header">
+        <button class="popup__btn">click on me</button>
+    </header>
+
+      <!-- MODALS -->
+      <div class="popup">
+        <div class="popup__container">
+            <button class="popup__close">
+                <strong>x</strong>
+            </button>
+            <form class="popup__form" action="#">
+                <h2 class="popup__form_header">
+                    Hello! 
+                    <br>
+                    Please leave your contacts
+                </h2>
+                <input class="popup__form_text" type="text" placeholder="Type your name" name="user_name">
+                <input class="popup__form_text" type="text" placeholder="Type your number" name="number">
+                <submit class="popup__form_submit" name="submit">CLICK!</submit>
+            </form>
+        </div>
+      </div>
+    <script src="/assets/JS/main.js" type="module"></script>
 </body>
 </html>
