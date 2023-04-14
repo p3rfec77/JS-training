@@ -5,7 +5,11 @@ const tabs = ({tabsSelector, tabsContentSelector, activeClass}) => {
     tabs.forEach((tab, i) => {
 
         tab.addEventListener('click', (e) => {
+            tabs.forEach((tab) => {
+                tab.classList.remove('active');
+            });
             e.target.classList.add('active');
+            
           tabsContent.forEach((content) => {
               content.style.display = 'none';
           })
