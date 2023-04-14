@@ -150,3 +150,41 @@ body {
     color: red;
     text-align: center;
 }
+
+/* TIMER */
+
+.timer {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.timer__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 600px;
+    height: 100px;
+}
+
+.timer__dates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.timer__time {
+    text-align: center;
+}
+
+.timer__time_num {
+    background-color: #acf2e0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.timer__time_text {
+    font-weight: normal;
+    font-size: 20px;
+}
