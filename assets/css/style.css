@@ -94,6 +94,7 @@ body {
     border: 2px solid black;
     border-radius: 20px;
     cursor: pointer;
+    margin-bottom: 15px;
 }
 
 /* TABS STYLE */
@@ -143,4 +144,9 @@ body {
 
 .tabs__content_container:first-of-type {
     display: block;
+}
+
+.message {
+    color: red;
+    text-align: center;
 }
