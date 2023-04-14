@@ -95,3 +95,52 @@ body {
     border-radius: 20px;
     cursor: pointer;
 }
+
+/* TABS STYLE */
+
+.tabs__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.tab {
+    background-color: #e1e4e8;
+    padding: 25px 50px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.tab:hover{
+    transform: scale(1.1);
+}
+
+.active {
+    background-color: #acf2e0;
+}
+
+.tabs__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.tabs__content_img {
+    width: 400px;
+    height: 300px;
+}
+
+.tabs__content_container {
+    display: none;
+}
+
+.tabs__content_container:first-of-type {
+    display: block;
+}
