@@ -1,11 +1,5 @@
-const popup = {
-    triggersSelector: '.popup__btn',
-    modalSelector: '.popup',
-    closeSelector: '.popup__close'
-}
-
 const modals = () => {
-    const bindModal = ({triggersSelector, modalSelector, closeSelector}) => {
+    const bindModal = ({triggersSelector, modalSelector, closeSelector, isImage}) => {
         const triggers = document.querySelectorAll(triggersSelector);
         const modal = document.querySelector(modalSelector);
         const close = document.querySelector(closeSelector);
@@ -17,6 +11,16 @@ const modals = () => {
                     
                      modal.style.display = 'block';
                      document.body.style.overflow = 'hidden';
+
+                     if(isImage === true) {
+                        modal.style.display = 'flex';
+                        modal.innerHTML = '';
+                        const pic = trigger.getAttribute('src');
+                        const largePic = document.createElement('img');
+                        largePic.setAttribute('src', pic);
+                        largePic.classList.add('large-pic');
+                        modal.append(largePic);
+                     }
                 });
             });
         };
@@ -49,7 +53,17 @@ const modals = () => {
         }, time * 1000);
     };
 
-    bindModal(popup);
+    bindModal({
+        triggersSelector: '.popup__btn',
+        modalSelector: '.popup',
+        closeSelector: '.popup__close'
+    });
+    bindModal({
+        triggersSelector: '.anime__pic',
+        modalSelector: '.popup--pic',
+        closeSelector: '.popup--pic',
+        isImage: true
+    });
     showModalByTime('.popup', 30);
 };
 
