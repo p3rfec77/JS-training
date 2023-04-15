@@ -34,7 +34,7 @@ body {
 
 /* MODALS */
 
-.popup {
+.popup, .popup-pic {
     display: none;
     background-color:rgba(0, 0, 0, 0.8);
     width: 100%;
@@ -44,6 +44,11 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+.popup-pic {
+    justify-content: center;
+    align-items: center;
 }
 
 .popup__container {
@@ -216,5 +221,7 @@ body {
 }
 
 .large-pic {
+    width: 300px;
+    height: 200px;
     transform: scale(2);
 }

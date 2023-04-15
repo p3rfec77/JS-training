@@ -4,6 +4,12 @@ const popup = {
     closeSelector: '.popup__close'
 }
 
+const popupPic = {
+    triggersSelector: '.anime__pic',
+    modalSelector: '.popup-pic',
+    closeSelector: '.popup-pic',
+}
+
 const modals = () => {
     const bindModal = ({triggersSelector, modalSelector, closeSelector}) => {
         const triggers = document.querySelectorAll(triggersSelector);
@@ -17,6 +23,16 @@ const modals = () => {
                     
                      modal.style.display = 'block';
                      document.body.style.overflow = 'hidden';
+
+                     if(modalSelector === '.popup-pic') {
+                        modal.style.display = 'flex';
+                        modal.innerHTML = '';
+                        const pic = trigger.getAttribute('src');
+                        const largePic = document.createElement('img');
+                        largePic.setAttribute('src', pic);
+                        largePic.classList.add('large-pic');
+                        modal.append(largePic);
+                     }
                 });
             });
         };
@@ -50,6 +66,7 @@ const modals = () => {
     };
 
     bindModal(popup);
+    bindModal(popupPic);
     showModalByTime('.popup', 30);
 };
 
