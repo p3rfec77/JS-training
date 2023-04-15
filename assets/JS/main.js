@@ -16,6 +16,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     forms('.popup__form');
 
-    const deadline = '2023/04/16';
+    const deadline = '2023/08/16';
     timer(deadline);
 });
