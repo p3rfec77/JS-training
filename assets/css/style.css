@@ -229,3 +229,59 @@ body {
     object-fit: cover;
     transform: scale(2);
 }
+
+.accordeon {
+    margin-top: 100px;
+}
+
+.accordeon__wrapper {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.accordeon__container {
+    width: 80%;
+    border: 2px solid black;
+}
+
+.accordeon__header {
+    background-color: #e1e4e8;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    padding-left: 15px;
+    border-bottom: 1px solid black;
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+
+.accordeon__header:hover {
+    background-color: #acf2e0;
+}
+
+.accordeon__content {
+    display: none;
+    padding: 20px;
+    border-bottom: 1px solid black;
+    animation-name: showContent;
+    animation-duration: 1s;
+}
+
+@keyframes showContent {
+    from {
+        opacity: 0.2;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.accordeon__content:last-of-type {
+    border: none;
+}
+
+.accordeon-active {
+    background-color: #acf2e0;
+}
