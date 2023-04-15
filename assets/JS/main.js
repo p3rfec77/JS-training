@@ -1,6 +1,7 @@
 import modals from "./modules/modals";
 import tabs from "./modules/tabs";
 import forms from "./modules/forms";
+import timer from "./modules/timer";
 
 window.addEventListener('DOMContentLoaded', () => {
     modals();
@@ -14,4 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
     tabs(animals);
 
     forms('.popup__form');
+
+    const deadline = '2023/04/16';
+    timer(deadline);
 });
