@@ -1,4 +1,4 @@
-const accordeon = ({headersSelector, contentSelector, activeClass}) => {
+const accordion = ({headersSelector, contentSelector, activeClass}) => {
     const headers = document.querySelectorAll(headersSelector);
     const content = document.querySelectorAll(contentSelector);
 
@@ -11,13 +11,15 @@ const accordeon = ({headersSelector, contentSelector, activeClass}) => {
                 header.classList.add(activeClass);
             }
 
-            content.forEach((block) => {
-                block.style.display = 'none';
-            });
-
-            content[i].style.display = 'block';
+            if (content[i].style.maxHeight) {
+                content[i].style.display = 'none'
+                content[i].style.maxHeight = null;
+            } else {
+                content[i].style.display = 'block';
+                content[i].style.maxHeight = content[i].scrollHeight + 'px';
+            }
         });
     });
 };
 
-export default accordeon;
+export default accordion;

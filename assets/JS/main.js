@@ -2,7 +2,7 @@ import modals from "./modules/modals";
 import tabs from "./modules/tabs";
 import forms from "./modules/forms";
 import timer from "./modules/timer";
-import accordeon from "./modules/accordeon";
+import accordion from "./modules/accordion";
 
 window.addEventListener('DOMContentLoaded', () => {
     modals();
@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const deadline = '2023/08/16';
     timer(deadline);
 
-    accordeon({
+    accordion({
         headersSelector: '.accordeon__header', 
         contentSelector: '.accordeon__content',
          activeClass: 'accordeon-active'

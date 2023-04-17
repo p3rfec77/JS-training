@@ -262,20 +262,11 @@ body {
 
 .accordeon__content {
     display: none;
-    padding: 20px;
+    background-color: white;
     border-bottom: 1px solid black;
-    animation-name: showContent;
-    animation-duration: 1s;
-}
-
-@keyframes showContent {
-    from {
-        opacity: 0.2;
-    }
-
-    to {
-        opacity: 1;
-    }
+    max-height: 0px;
+    overflow: hidden;
+    transition: 300ms ease-in-out;
 }
 
 .accordeon__content:last-of-type {
