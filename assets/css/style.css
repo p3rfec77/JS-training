@@ -261,7 +261,6 @@ body {
 }
 
 .accordeon__content {
-    display: none;
     background-color: white;
     border-bottom: 1px solid black;
     max-height: 0px;
