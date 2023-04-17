@@ -268,6 +268,10 @@ body {
     transition: 300ms ease-in-out;
 }
 
+.accordeon__content_text {
+    margin: 20px;
+}
+
 .accordeon__content:last-of-type {
     border: none;
 }

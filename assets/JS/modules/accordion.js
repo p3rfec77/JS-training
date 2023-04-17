@@ -11,11 +11,7 @@ const accordion = ({headersSelector, contentSelector, activeClass}) => {
                 header.classList.add(activeClass);
             }
 
-            if (content[i].style.maxHeight) {
-                content[i].style.maxHeight = null;
-            } else {
-                content[i].style.maxHeight = content[i].scrollHeight + 'px';
-            }
+            content[i].style.maxHeight = content[i].style.maxHeight ? content[i].style.maxHeight = null : content[i].style.maxHeight = content[i].scrollHeight + 'px';
         });
     });
 };
