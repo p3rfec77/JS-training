@@ -1,4 +1,4 @@
-const forms = (formsSelector) => {
+const forms = (formsSelector, state) => {
     
     const forms = document.querySelectorAll(formsSelector);
 
@@ -19,6 +19,11 @@ const forms = (formsSelector) => {
             
             const data = {};
             const formData = new FormData(form);
+            if(form.getAttribute('data-anime') === 'end') {
+                for (let key in state) {
+                    formData.append(key, state[key]);
+                }
+            }
             formData.forEach((value, key) => data[key] = value);
             console.log(data);
             

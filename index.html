@@ -9,7 +9,7 @@
 </head>
 <body>
     <header class="header">
-        <button class="popup__btn">click on me</button>
+        <button class="popup__btn popup__btn_form">click on me</button>
     </header>
 
     <section class="tabs">
@@ -120,21 +120,23 @@
         </div>
     </section>
 
+    <footer class="footer">
+        <button class="popup__btn popup__btn_multi">multi-popup</button>
+    </footer>
+
       <!-- MODALS -->
-      <div class="popup">
+      <div class="popup popup--form">
         <div class="popup__container">
             <button class="popup__close">
                 <strong>x</strong>
             </button>
             <form class="popup__form" action="#">
-                <h2 class="popup__form_header">
-                    Hello! 
-                    <br>
+                <h2 class="popup__header popup__header_form">
                     Please leave your contacts
                 </h2>
-                <input class="popup__form_text" type="text" placeholder="Type your name" name="user_name" required>
-                <input class="popup__form_text" type="text" placeholder="Type your number" name="number" required>
-                <button class="popup__form_submit" name="submit" type="submit">CLICK!</button>
+                <input class="popup__text popup__form_text" type="text" placeholder="Type your name" name="user_name" required>
+                <input class="popup__text popup__form_text" type="text" placeholder="Type your number" name="number" required>
+                <button class="popup__submit" name="submit" type="submit">CLICK!</button>
             </form>
         </div>
       </div>
@@ -142,6 +144,47 @@
       <div class="popup popup--pic">
         
       </div>
+
+      <div class="popup popup--anime">
+        <div class="popup__container popup__container_anime">
+            <h2 class="popup__header popup__header_anime">What's your favourite anime?</h2>
+            <img class="popup__img_anime" src="assets/img/anime-mix.jpg">
+            <input class="popup__text popup__text_anime" placeholder="type here..." data-anime>
+            <button class="popup__btn_next popup__btn_next_anime">next</button>
+        </div>
+      </div>
+
+      <div class="popup popup--genre">
+        <div class="popup__container popup__container_genre">
+            <h2 class="popup__header popup__header_genre">What's your favourite genre?</h2>
+            <img class="popup__img_genre" src="assets/img/anime-selector.jpg">
+            <select class="popup_selector popup_selector_genre" data-anime>
+                <option>Shonen</option>
+                <option>Seinen</option>
+                <option>Josei</option>
+                <option>Isekai</option>
+                <option>Mecha</option>
+                <option>Kodomomuke</option>
+                <option>Sport</option>
+            </select>
+            <button class="popup__btn_next popup__btn_next_genre">next</button>
+        </div>
+      </div>
+
+      <div class="popup popup--anime_end">
+        <div class="popup__container popup__container_anime_end">
+            <form class="popup__form popup__form_anime_end" data-anime="end" action="#">
+                <h2 class="popup__header popup__header_anime_end">
+                    Please leave your contacts
+                </h2>
+                <input class="popup__text popup__text_anime_end" type="text" placeholder="Type your name" name="user_name" required>
+                <input class="popup__text popup__text_anime_end" type="text" placeholder="Type your number" name="number" required>
+                <button class="popup__submit popup__submit_anime_end" name="submit" type="submit">CLICK!</button>
+            </form>
+        </div>
+      </div>
+
+
     <script src="/assets/JS/main.js" type="module"></script>
 </body>
 </html>
