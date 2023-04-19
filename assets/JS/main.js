@@ -3,6 +3,7 @@ import tabs from "./modules/tabs";
 import forms from "./modules/forms";
 import timer from "./modules/timer";
 import accordion from "./modules/accordion";
+import getData from "./modules/getData";
 
 window.addEventListener('DOMContentLoaded', () => {
     modals();
@@ -15,7 +16,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     tabs(animals);
 
-    forms('.popup__form');
+    const data = {};
+    forms('.popup__form', data);
 
     const deadline = '2023/08/16';
     timer(deadline);
@@ -25,4 +27,6 @@ window.addEventListener('DOMContentLoaded', () => {
         contentSelector: '.accordeon__content',
          activeClass: 'accordeon-active'
     });
+
+    getData(data);
 });

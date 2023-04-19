@@ -4,10 +4,20 @@ const modals = () => {
         const modal = document.querySelector(modalSelector);
         const close = document.querySelector(closeSelector);
 
+        const closeAllModal = () => {
+            const popup = document.querySelectorAll('.popup');
+            popup.forEach((window) => {
+                window.style.display = 'none';
+                document.body.style.overflow = '';
+            })
+        };
+
         const showModal = () => {
             triggers.forEach ((trigger) => {
                 trigger.addEventListener('click', (e) => {
                     e.preventDefault();
+
+                    closeAllModal();
                     
                      modal.style.display = 'block';
                      document.body.style.overflow = 'hidden';
@@ -25,20 +35,18 @@ const modals = () => {
             });
         };
 
-        const closeModal = () => {
-            modal.style.display = 'none';
-            document.body.style.overflow = '';
-        };
+        if (closeSelector) {
+         close.addEventListener('click', closeAllModal);
+         }
 
-        close.addEventListener('click', closeModal);
         modal.addEventListener('click', (e) => {
             if(e.target === modal) {
-                closeModal();
+                closeAllModal();
             }
         });
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
-                closeModal();
+                closeAllModal();
             };
         });
 
@@ -54,17 +62,31 @@ const modals = () => {
     };
 
     bindModal({
-        triggersSelector: '.popup__btn',
-        modalSelector: '.popup',
+        triggersSelector: '.popup__btn_form',
+        modalSelector: '.popup--form',
         closeSelector: '.popup__close'
     });
     bindModal({
         triggersSelector: '.anime__pic',
         modalSelector: '.popup--pic',
-        closeSelector: '.popup--pic',
         isImage: true
     });
-    showModalByTime('.popup', 30);
+
+    bindModal({
+        triggersSelector: '.popup__btn_multi',
+        modalSelector: '.popup--anime',
+    });
+
+    bindModal({
+        triggersSelector: '.popup__btn_next_genre',
+        modalSelector: '.popup--anime_end',
+    });
+
+    bindModal({
+        triggersSelector: '.popup__btn_next_anime',
+        modalSelector: '.popup--genre',
+    });
+    showModalByTime('.popup--form', 60);
 };
 
 export default modals;
