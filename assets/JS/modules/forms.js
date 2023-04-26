@@ -30,12 +30,12 @@ const forms = (formsSelector, state) => {
             const sendData = async (url, data) => {
                 messageContainer.textContent = message.loading;
                 const response = await fetch(url, {
-                    method: 'post',
+                    method: 'POST',
                     headers: {
-                        'content-type': 'aplication/json'
+                      'Content-Type': 'application/json;charset=utf-8'
                     },
                     body: JSON.stringify(data)
-                })
+                  })
 
                 .then (() => {
                     messageContainer.textContent = message.success;
@@ -57,7 +57,7 @@ const forms = (formsSelector, state) => {
                 })
             };
 
-            sendData('https://simple-server-cumz.onrender.com/api/data', data);
+            sendData('https://server-for-training.onrender.com/api/data', data);
         });
     }));
 };
